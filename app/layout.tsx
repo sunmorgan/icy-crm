@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cold CRM",
+  title: "Icy CRM",
   description: "Made by le Goat",
 };
 
