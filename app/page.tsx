@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Outreach from "@/components/dashboard/outreach";
 
 export default function Home() {
   return (
@@ -7,9 +7,7 @@ export default function Home() {
         <ol className="font-mono list-inside list-decimal text-lg text-center sm:text-left">
           Icy
         </ol>
-        <Link href="/dashboard" className="">
-          Dashboard
-        </Link>
+        <Outreach />
       </main>
     </div>
   );
