@@ -1,22 +1,20 @@
+"use client";
+import { useState } from "react";
+
 export default function Outreach() {
-  function addPerson(
-    name: string,
-    email: string,
-    company: string,
-    role: string,
-  ) {
-    return (
-      <>
-        <li>{name}</li>
-        <li>{email}</li>
-      </>
-    );
-  }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [people, setPeople] = useState("");
+
+  function addPerson() {}
 
   return (
     <>
-      <input type="text" className="bg-white" />
-      <input type="text" className="bg-white" />
+      <input type="text" value={name} className="bg-white" />
+      <input type="text" value={email} className="bg-white" />
+      <button onClick={addPerson} className="border-solid">
+        Add contact
+      </button>
     </>
   );
 }
