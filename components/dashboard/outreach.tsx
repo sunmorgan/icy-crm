@@ -4,14 +4,15 @@ import { useState } from "react";
 export default function Outreach() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [people, setPeople] = useState<{ name: string; email: string }[]>([]);
+  const [company, setCompany] = useState("");
+  const [people, setPeople] = useState<
+    { name: string; email: string; company: string }[]
+  >([]);
 
   function addPerson() {
-    if (name.trim() && email.trim()) {
-      setPeople([...people, { name: name.trim(), email: email.trim() }]);
-      setName(""); // Clear the input
-      setEmail(""); // Clear the input
-    }
+    setPeople([...people, { name: name, email: email, company: company }]);
+    setName("");
+    setEmail("");
   }
 
   return (
@@ -28,6 +29,12 @@ export default function Outreach() {
         onChange={(e) => setEmail(e.target.value)}
         className="bg-white"
       />
+      <input
+        type="text"
+        value={company}
+        onChange={(e) => setCompany(e.target.value)}
+        className="bg-white"
+      />
       <button onClick={addPerson} className="border-solid">
         Add contact
       </button>
@@ -36,6 +43,7 @@ export default function Outreach() {
           <li key={index}>
             <div>{person.name}</div>
             <div>{person.email}</div>
+            <div>{person.company}</div>
           </li>
         ))}
       </ul>
