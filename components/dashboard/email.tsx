@@ -1,3 +1,5 @@
+"use client";
+
 interface EmailProp {
   name: string;
   email: string;
@@ -5,5 +7,10 @@ interface EmailProp {
 }
 
 export default function Email({ name, email, company }: EmailProp) {
-  console.log("hi");
+  console.log(name, email, company);
+  return (
+    <>
+      <div>hello, {name}</div>
+    </>
+  );
 }
