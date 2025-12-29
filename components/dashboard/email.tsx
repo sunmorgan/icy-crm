@@ -10,7 +10,12 @@ export default function Email({ name, email, company }: EmailProp) {
   console.log(name, email, company);
   return (
     <>
-      <div>hello, {name}</div>
+      <div>
+        <textarea
+          placeholder="Enter your email here"
+          className="border border-s-stone-500"
+        ></textarea>
+      </div>
     </>
   );
 }
