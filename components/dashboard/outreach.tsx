@@ -2,12 +2,16 @@
 import { useState } from "react";
 
 export default function Outreach() {
+  interface Person {
+    name: string;
+    email: string;
+    company: string;
+  }
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
-  const [people, setPeople] = useState<
-    { name: string; email: string; company: string }[]
-  >([]);
+  const [people, setPeople] = useState<Person[]>([]);
 
   function addPerson() {
     setPeople([...people, { name: name, email: email, company: company }]);
@@ -38,14 +42,17 @@ export default function Outreach() {
       <button onClick={addPerson} className="border-solid">
         Add contact
       </button>
-      <ul>
-        {people.map((person, index) => (
-          <li key={index}>
-            <div>{person.name}</div>
-            <div>{person.email}</div>
-            <div>{person.company}</div>
-          </li>
-        ))}
+      <ul className="">
+        <div className="flex gap-x-4">
+          {people.map((person, index) => (
+            <li key={index}>
+              <div>{person.name}</div>
+              <div>{person.email}</div>
+              <div>{person.company}</div>
+            </li>
+          ))}
+          <button>email</button>
+        </div>
       </ul>
     </>
   );
